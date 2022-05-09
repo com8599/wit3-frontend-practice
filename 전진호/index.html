@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./index.css" rel="stylesheet" />
+    <link href="./reset.css" rel="stylesheet" />
+    <title>Week 1</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="header">
+        <img src="./assets/images/banner.png" alt="" class="header__img" />
+      </div>
+      <div class="content">
+        <div class="content_wrap">
+          <div class="switch_wrap">
+            <div class="switch__tabs">
+              <div class="swtich__tab switch__tab-selected">
+                <a class="tab__text">Existing</a>
+              </div>
+              <div class="swtich__tab">
+                <a class="tab__text">New</a>
+              </div>
+              <div class="switch__incicator"></div>
+            </div>
+          </div>
+          <div class="main_wrap">
+            <div class="login_wrap">
+              <div class="input_wrap">
+                <div class="input-container">
+                  <!-- <icon class="mail" /> -->
+                  <input
+                    type="text"
+                    class="input__email"
+                    placeholder="Emaill Address"
+                  />
+                </div>
+                <div class="input-container">
+                  <!-- <icon class="lock" /> -->
+                  <input
+                    type="password"
+                    class="input__pwd"
+                    placeholder="Password"
+                  />
+                  <icon class="eye" />
+                </div>
+              </div>
+              <div class="login-btn">
+                <a class="login-btn__text">LOGIN</a>
+              </div>
+              <div class="find_wrap">
+                <a href="/help/pwInquiry" class="find-pwd__text"
+                  >Forgot Password</a
+                >
+              </div>
+              <div class="divider_wrap">
+                <div class="divider__line"></div>
+                <span class="divider__text">Or</span>
+                <div class="divider__line"></div>
+              </div>
+              <div class="sns_wrap">
+                <img
+                  src="./assets/images/Facebook.svg"
+                  alt="facebook"
+                  class="sns__img-facebook"
+                />
+                <img
+                  src="./assets/images/Google.svg"
+                  alt="google"
+                  class="sns__img-google"
+                />
+              </div>
+            </div>
+            <div class="signup_wrap">
+              <div class="input_wrap">
+                <div class="input-container">
+                  <!-- <icon class="mail" /> -->
+                  <input type="text" class="input__name" placeholder="Name" />
+                </div>
+                <div class="input-container">
+                  <!-- <icon class="lock" /> -->
+                  <input
+                    type="text"
+                    class="input__email"
+                    placeholder="Email Address"
+                  />
+                </div>
+                <div class="input-container">
+                  <!-- <icon class="lock" /> -->
+                  <input
+                    type="text"
+                    class="input__email"
+                    placeholder="Email Address"
+                  />
+                </div>
+                <div class="input-container">
+                  <!-- <icon class="lock" /> -->
+                  <input
+                    type="password"
+                    class="input__pwd"
+                    placeholder="Password"
+                  />
+                  <icon class="eye" />
+                </div>
+                <div class="input-container">
+                  <!-- <icon class="lock" /> -->
+                  <input
+                    type="password"
+                    class="input__confirmation"
+                    placeholder="Confirmation"
+                  />
+                  <icon class="eye" />
+                </div>
+              </div>
+              <div class="login-btn">
+                <a class="login-btn__text">SIGN UP</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const tabItems = document.querySelectorAll(".swtich__tab");
+      const tabIndicator = document.querySelector(".switch__incicator");
+      const mainTab = document.querySelector(".main_wrap");
+
+      for (let i = 0; i < tabItems.length; i++) {
+        tabItems[i].addEventListener("click", () => {
+          tabIndicator.style.left = `calc(calc(100% /2) * ${i})`;
+          mainTab.style.transform = `translate3d(${i * -344}px, 0px, 0px)`;
+
+          document
+            .querySelector(".switch__tab-selected")
+            .classList.toggle("switch__tab-selected");
+          tabItems[i].classList.toggle("switch__tab-selected");
+        });
+      }
+    </script>
+  </body>
+</html>
