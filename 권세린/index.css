@@ -1,0 +1,227 @@
+* {
+    box-sizing: border-box;
+    user-select: none;
+}
+
+body {
+    max-width: 410.67px;
+    max-height: 1000px;
+}
+
+.wrapper {
+    background: linear-gradient(to top, #f04d7d, #f8a36c);
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    width: auto;
+    height: auto;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+}
+
+.header > img {
+    margin-top: 30px;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.tab_wrap {
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 30px;
+    margin: 30px 50px;
+    position: relative;
+    overflow: hidden;
+    z-index: 3;
+}
+
+.tab_wrap > span {
+    font-weight: bold;
+    flex-basis: 50%;
+    text-align: center;
+    padding: 10px 5px;
+    cursor: pointer;
+}
+
+#existing_tab {
+    color: black;
+    border-radius: 30px;
+    margin: 5px 0 5px 5px;
+    z-index: 2;
+    position: relative;
+    transition: 0.4s;
+}
+
+#new_tab {
+    color: white;
+    border-radius: 30px;
+    margin: 5px 5px 5px 0;
+    z-index: 2;
+    position: relative;
+    transition: 1.4s;
+}
+
+.background {
+    width: 49%;
+    height: 85%;
+    z-index: 1;
+    position: absolute;
+    transition: 1.4s;
+    background: white;
+    border-radius: 30px;
+    margin: 1%;
+    transform: translateX(-49%);
+}
+
+.input_form_wrap {
+    width: auto;
+    height: auto;
+    display: inline-block;
+    background-color: white;
+    margin: 0 50px;
+    border-radius: 5px;
+}
+
+.input_wrap {
+    display: flex;
+    margin: 30px 25px;
+}
+
+.input_wrap img {
+    width: 20px;
+    height: 20px;
+    margin-right: 20px;
+}
+
+.eye_img {
+    width: 15px;
+    height: 15px;
+    margin-right: 0;
+}
+
+#pw_input, #confirm_input {
+    margin-bottom: 40px;
+}
+
+.input_wrap input {
+    border: none;
+    font-weight: bolder;
+}
+
+.input_hr {
+    width: 80%;
+}
+
+.login_wrap, .signup_wrap {
+    display: flex;
+    justify-content: center;
+}
+
+#login_btn, #signup_btn {
+    width: 170px;
+    height: 40px;
+    color: white;
+    background: linear-gradient(to right, #f04d7d, #f8a36c);
+    padding: 5px 40px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    font-size: large;
+    margin-top: -20px;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 20px #f04d7d;
+}
+
+#login_btn:hover, #signup_btn:hover {
+    width: 170px;
+    height: 40px;
+    color: white;
+    background: linear-gradient(to right, #f04d7d, #f8a36c);
+    padding: 5px 40px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    font-size: large;
+    margin-top: -20px;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 20px #f04d7d;
+    cursor: pointer;
+}
+
+.find_wrap span {
+    display: flex;
+    justify-content: center;
+}
+
+.find_wrap a {
+    color: white;
+}
+
+.divide_wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.divide_wrap .divide_line {
+    border: none;
+    width: 30%;
+    height: 1px;
+}
+
+#left_line {
+    margin-right: 0;
+    background: linear-gradient(to right, 
+                                rgba(255, 255, 255, 0) 10%, 
+                                rgba(255, 255, 255, 0.25) 25%,
+                                rgba(255, 255, 255, 0.5) 50%,
+                                rgba(255, 255, 255, 0.75) 75%,
+                                rgba(255, 255, 255, 1) 100%);
+}
+
+#right_line {
+    margin-left: 0;
+    background: linear-gradient(to left, 
+                                rgba(255, 255, 255, 0) 10%, 
+                                rgba(255, 255, 255, 0.25) 25%,
+                                rgba(255, 255, 255, 0.5) 50%,
+                                rgba(255, 255, 255, 0.75) 75%,
+                                rgba(255, 255, 255, 1) 100%);
+}
+
+.divide_wrap span {
+    color: white;
+    margin: 0 10px;
+}
+
+.sns_wrap {
+    display: flex;
+    justify-content: center;
+    margin: 20px 20px 130px 20px;
+}
+
+.sns_wrap img {
+    margin: 0 15px;
+}
+
+.slide_wrap {
+    width: 410.67px;
+    height: fit-content;
+    display: flex;
+    overflow: hidden;
+}
+
+.slide1, .slide2 {
+    display: inline-block;
+    transition: 1.4s;
+    transform: translateX(0px);
+}

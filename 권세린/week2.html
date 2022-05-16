@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="utf-8"/>
+    <title>week2</title>
+</head>
+<body>
+
+    <script>
+        async function getUsers(names) {
+        let jobs = [];
+
+            for(let name of names) {
+                let job = fetch(`https://api.github.com/users/${name}`).then(
+                    successResponse => {
+                        if (successResponse.status != 200) {
+                            return null;
+                        } else {
+                            return successResponse.json();
+                        }
+                    },
+                    failResponse => {
+                        return null;
+                    }
+                );
+                jobs.push(job);
+            }
+            let results = await Promise.all(jobs);
+
+            return results;
+        }
+
+        async function show() {
+        let users = await getUsers(["serin301"]);
+        const json = JSON.stringify(users);
+        document.write(json + '<br>');
+        }
+
+        show();
+
+    </script>
+</body>
+</html>
