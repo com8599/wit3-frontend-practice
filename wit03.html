@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>wit03 과제</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script
+    crossorigin
+    src="https://unpkg.com/react@17/umd/react.production.min.js"
+  ></script>
+  <script
+    crossorigin
+    src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"
+  ></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    const root = document.getElementById("root");
+    const date = new Date();
+
+    /*
+    const date = new Date();
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+    const hour = date.getHours();
+    const minute = date.getMinutes();
+    const second = date.getSeconds();
+    */
+
+    const calendar = {
+      year: date.getFullYear(),
+      month: String(date.getMonth() + 1),
+      day: String(date.getDate()),
+      hour: String(date.getHours()),
+      minute: String(date.getMinutes()),
+      second: String(date.getSeconds()),
+    };
+
+    function Header({ username }) {
+      return <header>{username}, 환영합니다</header>;
+    }
+
+    function Body({ calendar }) {
+      return (
+        <body>
+          {calendar.year}/
+          {calendar.month.length != 2
+            ? calendar.month.padStart(2, "0")
+            : calendar.month}
+          /
+          {calendar.day.length != 2
+            ? calendar.day.padStart(2, "0")
+            : calendar.day}{" "}
+          {calendar.hour.length != 2
+            ? calendar.hour.padStart(2, "0")
+            : calendar.hour}
+          :
+          {calendar.minute.length != 2
+            ? calendar.minute.padStart(2, "0")
+            : calendar.minute}
+          :
+          {calendar.second.length != 2
+            ? calendar.second.padStart(2, "0")
+            : calendar.second}
+        </body>
+      );
+    }
+
+    function App() {
+      return (
+        <div>
+          <Header username="김노정" />
+          <Body calendar={calendar} />
+        </div>
+      );
+    }
+
+    ReactDOM.render(<App />, root);
+  </script>
+</html>
