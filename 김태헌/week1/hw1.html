@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="hw1.css" rel="stylesheet">
+    <script src="hw1.js"></script>
+    <meta charset="utf-8">
+    <title>HW1</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="headerImage">
+        <img src="picture.avif">
+      </div>
+      <div class="menu">
+        <span id="existing" onClick="change1()">
+          Existing
+        </span>
+        <span id="new" onClick="change2()">
+          New
+        </span>
+      </div>
+
+      <div class="login-before">
+          <form>
+            <div>
+              <label>email-address</label>
+              <input type="text" id="email-address" placeholder="Email Address">
+            </div>
+            <div>
+              <label>password</label>
+              <input type="text" id="password" placeholder="Password">
+            </div>
+          </form>
+          <button>
+            LOGIN
+          </button>
+      </div>
+
+      <div class="login-after">
+        <form>
+          <div>
+            <label>name</label><input type="email" placeholder="name"/>
+          </div>
+          <div>
+            <label>email-address</label><input type="password" placeholder="email-address"/>
+          </div>
+          <div>
+            <label>password</label><input type="password" placeholder="password"/>
+          </div>
+          <div>
+            <label>confirmation</label><input type="password" placeholder="confirmation"/>
+          </div>
+        </form>
+        <button>
+          LOGIN
+        </button>
+      </div>
+      <div class="footer">
+        <a href="" class="forget-password">Forgot Password?</a>
+        <p>Or</p>
+          <a href="#" class="fa fa-facebook"></a>
+          <a href="#" class="fa fa-google"></a>
+      </div>
+      </div>
+    </div>
+  </body>
+</html>
