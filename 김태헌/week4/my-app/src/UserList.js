@@ -1,18 +1,6 @@
 import React from "react";
-import { useEffect } from "react";
 
 function User({ user, onRemove }) {
-  useEffect(() => {
-    console.log("유저 추가");
-  }, []);
-
-  //unmount 될 때 실행된다.
-  useEffect(() => {
-    //clean-up function
-    return () => {
-      console.log("removed");
-    };
-  }, []);
   return (
     <div>
       <span>
@@ -34,6 +22,3 @@ const UserList = ({ users, onRemove }) => {
 };
 
 export default UserList;
-
-// React Hook
-// useEffect => 상태를 감시하면서 상태가 변경될때마다 실행되는 애들
