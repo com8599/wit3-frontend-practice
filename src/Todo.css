@@ -1,0 +1,36 @@
+input {
+  width: 90%;
+  height: 40px;
+}
+
+.addBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input {
+  margin-top: 10%;
+}
+
+.addList {
+  position: relative;
+  bottom: -100px;
+  border-radius: 100%;
+  border: none;
+  color: white;
+  background-color: rgb(55, 217, 168);
+  padding: 10px;
+}
+
+button {
+  background: none;
+  border: none;
+}
+
+.circle {
+  border: 1px solid gray;
+  border-radius: 100%;
+  padding: 3px 15px;
+  margin-right: 15px;
+}
