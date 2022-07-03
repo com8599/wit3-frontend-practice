@@ -1,0 +1,9 @@
+.body_container{
+    padding: 20px 32px;
+    padding-bottom: 48px;
+    overflow-y: auto; 
+}
+
+/*
+overflow -> 내용이 넘칠때 어떻게 보일지 
+*/
