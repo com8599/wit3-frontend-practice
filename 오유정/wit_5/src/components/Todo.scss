@@ -1,0 +1,36 @@
+.body{
+  width:512px;
+  height:768px;
+  background:white;
+  display:flex;
+  flex-direction: column;
+  margin:96px auto 32px;
+  border-radius: 16px;
+  box-shadow: RGB(0 0 0 / 0.04) 0px 0px 8px 0px;
+  .TodoHeader{
+    padding:48px 32px 24px;
+    border-bottom:1px solid rgb(233,236,239);
+  }
+  .TodoLists{
+    flex:1 1 0%;
+    padding: 20px 32px 48px;
+    overflow:auto;
+  }
+}
+.TodoHeader h1{
+ font-size:36px;
+ margin:0px; 
+ color:rgb(52, 58, 64);
+}
+.TodoHeader h2{
+  margin-top:4px;
+  color:rgb(134,142,150);
+  font-size: 21px;
+  font-weight: 400;
+}
+.TodoHeader .RestTodo{
+  color:rgb(32,201,151);
+  font-size:18px;
+  margin-top:40px;
+  font-weight: bold;
+}
