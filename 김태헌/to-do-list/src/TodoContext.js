@@ -41,7 +41,7 @@ const todoReducer = (state, action) => {
     case "REMOVE": // 삭제
       return state.filter((todo) => todo.id !== action.id);
     default:
-      throw new Error(`Unhandled action type: ${action.type}`);
+      return state;
   }
 };
 
@@ -52,7 +52,7 @@ const TodoNextIdContext = createContext();
 export function TodoProvider({ children }) {
   const [state, dispatch] = useReducer(
     todoReducer,
-    [],
+    [initialTodos],
     () => {
       const localData = localStorage.getItem("initialTodos");
       return localData ? JSON.parse(localData) : [];
@@ -60,8 +60,8 @@ export function TodoProvider({ children }) {
     initialTodos
   );
   useEffect(() => {
-    localStorage.setItem("initialTodos", JSON.stringify(initialTodos));
-  }, [todoReducer, initialTodos]);
+    localStorage.setItem("initialTodos", JSON.stringify(state));
+  }, [state]);
   const nextId = useRef(5);
 
   return (
