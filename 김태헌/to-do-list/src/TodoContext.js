@@ -23,15 +23,16 @@ const initialTodos = [
   },
 ];
 
+//reducer함수
 const todoReducer = (state, action) => {
   switch (action.type) {
-    case "CREATE":
+    case "CREATE": //새로 생성
       return state.concat(action.todo);
-    case "TOGGLE":
+    case "TOGGLE": // 버튼 클릭했을때
       return state.map((todo) =>
         todo.id === action.id ? { ...todo, done: !todo.done } : todo
       );
-    case "REMOVE":
+    case "REMOVE": // 삭제
       return state.filter((todo) => todo.id !== action.id);
     default:
       throw new Error(`Unhandled action type: ${action.type}`);

@@ -2,6 +2,7 @@ import React from "react";
 import styled, { css } from "styled-components";
 import "../css/TodoItem.css";
 import { MdDone, MdDelete } from "react-icons/md";
+import { useTodoDispatch } from "../TodoContext";
 
 const Check = styled.div`
   width: 32px;
@@ -55,11 +56,16 @@ const Text = styled.div`
     `}
 `;
 const TodoItem = ({ id, done, text }) => {
+  const dispatch = useTodoDispatch();
+  const onToggle = () => dispatch({ type: "TOGGLE", id });
+  const onRemove = () => dispatch({ type: "REMOVE", id });
   return (
     <ItemContainer>
-      <Check done={done}>{done && <MdDone />}</Check>
+      <Check done={done} onClick={onToggle}>
+        {done && <MdDone />}
+      </Check>
       <Text done={done}>{text}</Text>
-      <Remove>
+      <Remove onClick={onRemove}>
         <MdDelete />
       </Remove>
     </ItemContainer>

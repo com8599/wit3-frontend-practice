@@ -2,6 +2,7 @@ import React from "react";
 import "../css/TodoBody.css";
 import TodoItem from "./TodoItem";
 import styled from "styled-components";
+import { useTodoState } from "../TodoContext";
 const BodyContainer = styled.div`
   flex: 1;
   padding: 20px 32px;
@@ -9,12 +10,17 @@ const BodyContainer = styled.div`
   overflow-y: auto;
 `;
 const TodoBody = () => {
+  const todos = useTodoState();
   return (
     <BodyContainer>
-      <TodoItem text="프로젝트 생성하기" done={true} />
-      <TodoItem text="컴포넌트 스타일링 하기" done={true} />
-      <TodoItem text="데이트 하기" done={false} />
-      <TodoItem text="React 공부하기" done={false} />
+      {todos.map((todo) => (
+        <TodoItem
+          key={todo.id}
+          id={todo.id}
+          text={todo.text}
+          done={todo.done}
+        />
+      ))}
     </BodyContainer>
   );
 };

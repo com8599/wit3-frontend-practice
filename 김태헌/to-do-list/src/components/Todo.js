@@ -4,6 +4,7 @@ import TodoHeader from "./TodoHeader";
 import TodoBody from "./TodoBody";
 import TodoFooter from "./TodoFooter";
 import styled from "styled-components";
+import { TodoProvider } from "../TodoContext";
 const TodoContainer = styled.div`
   width: 512px;
   height: 768px;
@@ -19,11 +20,13 @@ const TodoContainer = styled.div`
 `;
 const Todo = () => {
   return (
-    <TodoContainer>
-      <TodoHeader />
-      <TodoBody />
-      <TodoFooter />
-    </TodoContainer>
+    <TodoProvider>
+      <TodoContainer>
+        <TodoHeader />
+        <TodoBody />
+        <TodoFooter />
+      </TodoContainer>
+    </TodoProvider>
   );
 };
 
