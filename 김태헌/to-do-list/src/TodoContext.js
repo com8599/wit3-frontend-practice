@@ -1,4 +1,10 @@
-import React, { useReducer, createContext, useContext, useRef } from "react";
+import React, {
+  useReducer,
+  createContext,
+  useContext,
+  useRef,
+  useEffect,
+} from "react";
 
 const initialTodos = [
   {
@@ -13,7 +19,7 @@ const initialTodos = [
   },
   {
     id: 3,
-    text: "ContextAPI 사용해보기",
+    text: "contextAPI 사용하기",
     done: false,
   },
   {
@@ -44,7 +50,18 @@ const TodoDispatchContext = createContext();
 const TodoNextIdContext = createContext();
 
 export function TodoProvider({ children }) {
-  const [state, dispatch] = useReducer(todoReducer, initialTodos);
+  const [state, dispatch] = useReducer(
+    todoReducer,
+    [],
+    () => {
+      const localData = localStorage.getItem("initialTodos");
+      return localData ? JSON.parse(localData) : [];
+    },
+    initialTodos
+  );
+  useEffect(() => {
+    localStorage.setItem("initialTodos", JSON.stringify(initialTodos));
+  }, [todoReducer, initialTodos]);
   const nextId = useRef(5);
 
   return (
@@ -60,6 +77,7 @@ export function TodoProvider({ children }) {
 
 export function useTodoState() {
   const context = useContext(TodoStateContext);
+
   if (!context) {
     throw new Error("Cannot find TodoProvider");
   }
