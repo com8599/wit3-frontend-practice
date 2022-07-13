@@ -37,3 +37,14 @@ blog 만들기
 ### week6
 
 https://mashup-todolist.surge.sh
+
+7/6
+webpack -> 짐을 싸주는 것이다. 여러개를 따로나눠서 브라우저에서 받으면 리소스가 너무 많으니까 한번에 받으면 적은 비용으로 받을 수 있다. 묶어서 보내는 것.
+babel은 transfiler 구형(예전 브라우저)에서는 이해하지 못하기 때문에.
+loader는 webpack은 자바 스크립트하고 js, css랑 html도 받아올 수 있도록 하는 것이다.
+node 프로젝트를 만들것인데 dependency하고 dev-dependency가 있는데 dependency는 컴파일이후에도 사용될 것. dev-dependency는 개발할 때 사용되는 것. 컴파일과 컴파일 이전에 사용될 것. npm -D
+preset은 plugin을 모아놓은 것.
+next js는 잘 설정되어있지만
+
+babelrc : babel 경로를 상대경로로 해주는 것.
+babel.config.json
