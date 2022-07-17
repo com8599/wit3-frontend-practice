@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Movie from "../components/Movie";
 const Home = () => {
-  //react-router-dom 설치
   const [loading, setLoading] = useState(true);
   const [movies, setMovies] = useState([]);
   const getMovies = async () => {
