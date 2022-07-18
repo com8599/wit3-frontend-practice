@@ -48,3 +48,7 @@ next js는 잘 설정되어있지만
 
 babelrc : babel 경로를 상대경로로 해주는 것.
 babel.config.json
+
+###
+
+api 사용해서 User 출력해보기.
