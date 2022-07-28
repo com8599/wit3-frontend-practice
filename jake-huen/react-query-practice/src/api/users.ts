@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { ComponentFactory } from 'react';
 
 const BASE_URL = 'https://jsonplaceholder.typicode.com';
 
