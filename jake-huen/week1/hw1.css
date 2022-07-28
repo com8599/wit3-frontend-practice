@@ -1,0 +1,121 @@
+body{
+    display:flex;
+    justify-content: center;
+  }
+  .container{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: pink;
+  }
+  
+  .headerImage img{
+    width:300px;
+  }
+  .menu{
+    background-color:black;
+    border-radius:6px;
+    margin-top: 20px;
+    margin-bottom:20px;
+    width:500px;
+    display:flex;
+    justify-content: space-between;
+    font-size:20px;
+  }
+  #existing{
+    background-color: beige;
+    padding:15px;
+    margin:5px;
+    border-radius:6px;
+    width:225px;
+    text-align: center;
+  }
+  #new{
+    color:beige;
+    padding:15px;
+    margin:5px;
+    border-radius:6px;
+    text-align: center;
+    width:225px;
+    text-align: center;
+  }
+  .login-before{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .login-before input{
+    padding:20px;
+    width:300px;
+    font-size:15px;
+    border-radius: 5px;
+    border-color: transparent;
+    margin-bottom:10px;
+  }
+  .login-before #email-address{
+    border-bottom: 1px solid gray;
+  }
+  .login-before button{
+    padding:10px;
+    width:150px;
+    background-color:gray;
+    border-color: transparent;
+    font-size:15px;
+  }
+  .forget-password{
+    margin-top:40px;
+    text-align: center;
+    color:gray;
+  }
+  .login-after{
+    display:none;
+    flex-direction: column;
+    align-items: center;
+  }
+  .login-after input{
+    padding:20px;
+    width:300px;
+    font-size:15px;
+    border-radius: 5px;
+    border-color: transparent;
+    margin-bottom:10px;
+  }
+  .login-after #confirmation{
+    border-color:transparent;
+  }
+  .login-after button{
+    padding:10px;
+    width:150px;
+    background-color:gray;
+    border-color: transparent;
+    font-size:15px;
+  }
+  p{
+      text-align: center;
+  }
+  .fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+  }
+  
+  /* Add a hover effect if you want */
+  .fa:hover {
+    opacity: 0.7;
+  }
+  
+  /* Set a specific color for each brand */
+  
+  /* Facebook */
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+  
+  /* google */
+  .fa-twitter {
+    background: #55ACEE;
+    color: white;
+  }

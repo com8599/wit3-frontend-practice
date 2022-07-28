@@ -1,0 +1,48 @@
+
+root.render(<div></div>);
+
+function adder(a:number,b:number){
+    return a+b;
+}
+
+function getFirstLetter(text:string):string{
+    return text[0];
+}
+
+function addFrontEnd(nums:number[]):number{
+    return nums[0]+nums[nums.length-1];
+}
+
+function identity(something:any){
+    return something;
+}
+
+const person={
+    name:'jinho',
+    age:22,
+};
+
+type customNum = number;
+
+interface customNum2{
+    num:2;
+}
+
+// interface vs type
+// interface는 객체만 표현할 수 있다.
+
+const person:Person{
+
+}
+
+interface Person{
+    name:string;
+    age:number;
+}
+
+type Person = {
+    name:string;
+    age:number;
+}
+
+정적 타입 검사자 : TypeScript
