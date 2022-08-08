@@ -4,13 +4,6 @@ import { Router, useRouter } from 'next/router';
 
 const Header_Box = () => {
     const router = useRouter();
-    /*
-    const title = router.query.title;
-    const price = router.query.price;
-
-    console.log(title);
-    console.log(price);
-    */
 
     return (
         <HeaderWrapper>

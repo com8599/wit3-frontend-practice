@@ -11,8 +11,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <AppLayout>
         <Component {...pageProps} />
       </AppLayout>
-    </QueryClientProvider>
+      </QueryClientProvider>
   );
 }
-
 export default MyApp
