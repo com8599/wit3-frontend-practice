@@ -104,6 +104,27 @@
   margin-left: 0.5rem;
 }
 
+.product_img_div {
+  width: 70%;
+  height: 200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.product_img {
+  width: 70%;
+  height: 200px;
+}
+
+.add_cart_btn {
+  text-align: center;
+}
+
+.add_cart_btn:hover {
+  text-align: center;
+  cursor: pointer;
+}
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;
