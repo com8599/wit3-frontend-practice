@@ -6,7 +6,7 @@
 //     new_button.style.backgroundColor="white";
 //     exit_button.style.color = "white";
 //     exit_button.style.backgroundColor = "transparent";
-//   }
+//   } 
 //   else{
 //     exit_button.style.color = "black";
 //     exit_button.style.backgroundColor="white";
