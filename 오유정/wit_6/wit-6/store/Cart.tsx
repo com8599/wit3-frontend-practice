@@ -1,13 +1,15 @@
 // import { useState } from "react"
-// import ProductDetail from "../pages/ProductDetail/[ProductDetail]";
+// import ProductDetail from "./ProductDetail/[ProductDetail]";
+// interface idType {
+//   id:number
+// }
 // export default function Cart(){
-//   const [cart,setCart] = useState({});
-//   const addCart = (id:number)=>{
-//     setCart({...cart,id});
-//     console.log(cart);
+//   // const [cart,setCart] = useState({});
+//   const addCart = ()=>{
+//     // setCart({...cart,id});
+//     // console.log(cart);
+//     console.log("success!!");
 //   }
-//   return(
-//     <ProductDetail addCart={addCart}></ProductDetail>
-//   )
+//   return <ProductDetail addCart={addCart}></ProductDetail>
 // }
  
