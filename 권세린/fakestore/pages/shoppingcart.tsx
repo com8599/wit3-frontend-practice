@@ -5,9 +5,17 @@ import React, {useState} from 'react'
 
 const ShoppingCartPage: NextPage = () => {
     const router = useRouter();
-    const title = router.query.title;
+    const title = router.query.title as string;
     let price = router.query.price as string;
     let priceNum: number;
+
+    if (typeof title == 'undefined') {
+        return (
+            <div>
+                <p>장바구니가 비어있습니다.</p>
+            </div>
+        );
+    }
 
     priceNum = Number(price);
 
@@ -18,14 +26,22 @@ const ShoppingCartPage: NextPage = () => {
     }
     
     const onDecrease = () => {
-        if(selectamount == 0) {
-            selectamount = 0;
-        }
         setselectamount(selectamount - 1);
+        if(selectamount == 0) {
+            setselectamount(0);
+        }
     }
 
     let priceall = (priceNum * selectamount);
 
+    sessionStorage.setItem("title", title);
+    sessionStorage.setItem("price", price);
+
+    let a = sessionStorage.getItem("title");
+    let b = sessionStorage.getItem("price");
+
+    console.log(a);
+    console.log(b);
 
     return (
         <div>

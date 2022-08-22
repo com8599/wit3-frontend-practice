@@ -22,13 +22,76 @@ export const Nav = styled.div`
     color: white;
 `;
 
-export const ShoppingCartLink = styled.a`
+export const All = styled.a`
     width: 20%;
     height: auto;
     font-size: 15px;
+    margin-right: 10px;
 
     &:hover{
         text-decoration: underline;
         cursor: pointer;
     }
-`
+`;
+
+export const Electronics = styled.a`
+    width: 20%;
+    height: auto;
+    font-size: 15px;
+    margin-right: 10px;
+
+    &:hover{
+        text-decoration: underline;
+        cursor: pointer;
+    }
+`;
+
+export const Jewelery = styled.a`
+    width: 20%;
+    height: auto;
+    font-size: 15px;
+    margin-right: 10px;
+
+    &:hover{
+        text-decoration: underline;
+        cursor: pointer;
+    }
+`;
+
+export const MensClothing = styled.a`
+    width: 20%;
+    height: auto;
+    font-size: 15px;
+    margin-right: 10px;
+
+    &:hover{
+        text-decoration: underline;
+        cursor: pointer;
+    }
+`;
+
+
+export const WomensClothing = styled.a`
+    width: 20%;
+    height: auto;
+    font-size: 15px;
+    margin-right: 10px;
+
+    &:hover{
+        text-decoration: underline;
+        cursor: pointer;
+    }
+`;
+
+
+export const ShoppingCartLink = styled.a`
+    width: 20%;
+    height: auto;
+    font-size: 15px;
+    margin-right: 10px;
+
+    &:hover{
+        text-decoration: underline;
+        cursor: pointer;
+    }
+`;
