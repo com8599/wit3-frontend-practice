@@ -4,8 +4,37 @@ import axios from "axios";
 import {useQuery} from "@tanstack/react-query";
 import style from 'styled-components'
 import router from 'next/router';
-import Usecategory from "../pages/api/UseCategory";
+import Usecategory from "../../pages/api/UseCategory";
+import { useState } from "react";
+export default function Navbar():ReactElement{
+  const { isLoading,error ,data, isFetching } = useQuery<string[],Error>(["category"], () =>
+    axios
+      .get("https://fakestoreapi.com/products/categories")
+      .then((res) => res.data)   
+  );
+
+  if (isLoading) return (<p>Loading...</p>);
+  if (error) return (<p>An error has occurred: {error.message}</p>);
+  if (isFetching) return(<p>Updating...</p>);
+
+  return (
+    <>
+    <header>
+    <Link href="/"><Logo>My Shop</Logo></Link>
+      <nav>
+        <MenuWrapper>
+        {data.map(e=>{return(<Menu key={data.indexOf(e)} onClick={() => {
+          router.push(`/category/${e}`)
+          }}>{e}</Menu>)})}
+        </MenuWrapper>
+      </nav>
+    </header>
+    </>
+  )
+}
 const Logo = style.p`
+margin-left:60px;
+display:inline-block;
 font-size:40px;
 &:hover{
   cursor:pointer;
@@ -23,27 +52,3 @@ const Menu = style.li`
   cursor:pointer;
 }
 `
-export default function Navbar():ReactElement{
-  const { isLoading,error ,data, isFetching } = useQuery<string[],Error>(["category"], () =>
-    axios
-      .get("https://fakestoreapi.com/products/categories")
-      .then((res) => res.data)   
-  );
-  if (isLoading) return (<p>Loading...</p>);
-  if (error) return (<p>An error has occurred: {error.message}</p>);
-  return (
-    <>
-    <div>{isFetching ? "Updating..." : ""}</div>
-    <header>
-    <Link href="/"><Logo>My Shop</Logo></Link>
-      <nav>
-        <MenuWrapper>
-        {data.map(e=>{return(<Menu key={data.indexOf(e)} onClick={() => {
-          router.push(`/category/${e}`)
-          }}>{e}</Menu>)})}
-        </MenuWrapper>
-      </nav>
-    </header>
-    </>
-  )
-}

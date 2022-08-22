@@ -1,12 +1,43 @@
 import { useRouter } from "next/router";
 import { useState } from "react";
 import UseProduct from "../api/Product";
+import { useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import Image from "next/image";
 import style from 'styled-components';
-import { TypeProduct } from "../../types/Product";
-const Main = style.main`
+import { productType } from "../../types/Product";
+
+export default function ProductDetail(){
+  const router = useRouter(); 
+  const productId =router.query.ProductDetail;
+  const productIdquery= useQuery<productType,Error>([`product${productId}`], () =>
+  axios
+  .get(
+    `https://fakestoreapi.com/products/${productId}`)
+  .then((res)=>res.data)
+)
+  if(productIdquery.isLoading) return(<>Loading...</>);
+  if (productIdquery.error) return (<>An error has occurred: {productIdquery.error.message}</>);
+  if(productIdquery.isFetching)return(<>{productIdquery.isFetching ? "Updating..." : ""}</>);
+  return(
+    <Main>
+      <ProductImage>
+        <Image src={productIdquery.data.image} alt={productIdquery.data.title} width={300} height={300}></Image>
+      </ProductImage>
+      <ProductText>
+        <h2>{productIdquery.data.title}</h2>
+        <br></br>
+        <h3>price : {productIdquery.data.price}</h3>
+        <br></br>
+        <p>{productIdquery.data.description}</p>
+        <button>cart</button>
+      </ProductText>
+    </Main>
+   
+  )
+  }
+  const Main = style.main`
 margin:80px 150px;
 display:flex;
 flex-wrap: wrap;
@@ -17,36 +48,3 @@ flex:1 1 50%;
 const ProductText = style.div`
 flex:1 1 50%;
 `
-// interface addCartType {
-//   addCart : (id:number) => void;
-// }
-export default function ProductDetail(){
-  const router = useRouter(); 
-  const ProudctId =router.query.ProductDetail;
-  const {isFetching,isLoading,error,data} = useQuery<TypeProduct,Error>(["product"], () =>
-  axios
-  .get(
-    `https://fakestoreapi.com/products/${ProudctId}`)
-  .then((res)=>res.data)
-)
-  if(isLoading) return(<>Loading...</>);
-  if (error) return (<>An error has occurred: {error.message}</>);
-  if(isFetching)return(<>{isFetching ? "Updating..." : ""}</>);
-  return(
-    <Main>
-      <ProductImage>
-        <Image src={data.image} alt={data.title} width={300} height={300}></Image>
-      </ProductImage>
-      <ProductText>
-        <h2>{data.title}</h2>
-        <br></br>
-        <h3>price : {data.price}</h3>
-        <br></br>
-        <p>{data.description}</p>
-        {/* <button onClick={()=>{addCart}}>cart</button> */}
-      </ProductText>
-    </Main>
-   
-   
-  )
-  }
