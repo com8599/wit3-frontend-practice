@@ -1,9 +1,9 @@
 import style from 'styled-components';
 import Image from 'next/image'
-import { TypeProduct } from '../types/Product';
+import { productType } from '../types/Product';
 import { Props } from 'next/script';
 import Router from 'next/router';
-export default function Product({product}:{product:TypeProduct[]}){
+export default function Product({product}:{product:productType[]}){
   const toDetail = (id:number)=>{
     Router.push(`/ProductDetail/${id}`)
   }

@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import { useState } from "react";
+import React from "react";
 import UseProduct from "../api/Product";
 import { useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
@@ -31,7 +32,7 @@ export default function ProductDetail(){
         <h3>price : {productIdquery.data.price}</h3>
         <br></br>
         <p>{productIdquery.data.description}</p>
-        <button>cart</button>
+        {/* <button>cart</button> */}
       </ProductText>
     </Main>
    
