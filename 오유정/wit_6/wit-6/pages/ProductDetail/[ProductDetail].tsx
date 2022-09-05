@@ -1,23 +1,26 @@
 import { useRouter } from "next/router";
 import { useState } from "react";
 import React from "react";
-import UseProduct from "../api/Product";
+import UseProduct from "../api/AllProducts";
 import { useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import Image from "next/image";
 import style from 'styled-components';
 import { productType } from "../../types/Product";
+import {Cart} from "../../components/cart/Cart";
+import { ADDRCONFIG } from "dns";
+import ProductQuery from "../api/SingleProduct";
 
 export default function ProductDetail(){
   const router = useRouter(); 
-  const productId =router.query.ProductDetail;
-  const productIdquery= useQuery<productType,Error>([`product${productId}`], () =>
-  axios
-  .get(
-    `https://fakestoreapi.com/products/${productId}`)
-  .then((res)=>res.data)
-)
+  const productId =Number(router.query.ProductDetail);
+  // const productIdquery= useQuery<productType,Error>([`product${productId}`], () =>
+  // axios
+  // .get(
+  //   `https://fakestoreapi.com/products/${productId}`)
+  // .then((res)=>res.data)
+  const productIdquery = ProductQuery(productId);
   if(productIdquery.isLoading) return(<>Loading...</>);
   if (productIdquery.error) return (<>An error has occurred: {productIdquery.error.message}</>);
   if(productIdquery.isFetching)return(<>{productIdquery.isFetching ? "Updating..." : ""}</>);
@@ -32,7 +35,7 @@ export default function ProductDetail(){
         <h3>price : {productIdquery.data.price}</h3>
         <br></br>
         <p>{productIdquery.data.description}</p>
-        {/* <button>cart</button> */}
+        <Cart id ={productIdquery.data.id} page="ProductDetail"></Cart>
       </ProductText>
     </Main>
    

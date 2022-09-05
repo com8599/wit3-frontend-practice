@@ -7,7 +7,7 @@ export default function Usecategory(category:String){
   return useQuery<productType[],Error>([`${(category)}products`], async() =>
   axios
     .get(`https://fakestoreapi.com/products/category/${(category)}`)
-    .then((res) => res.data)    
-
+    .then((res) => res.data),
+    // {refetchOnMount:false,refetchOnWindowFocus:false}  
 )
 }

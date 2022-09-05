@@ -7,6 +7,7 @@ export default function UseProduct(){
   axios
   .get(
     `https://fakestoreapi.com/products`)
-  .then((res)=>res.data)
+  .then((res)=>res.data),
+  // {refetchOnMount:false,refetchOnWindowFocus:false} 
 )
 }

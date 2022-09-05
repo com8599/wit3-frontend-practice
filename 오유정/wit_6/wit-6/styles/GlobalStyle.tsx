@@ -7,8 +7,4 @@ html,body{
 
 }`
 export default GlobalStyle;
-  // ${props=>props.login&&`
-  // &:not(LoginBar){
-  //   opacity:0.8;
-  // }
-  // `}
+

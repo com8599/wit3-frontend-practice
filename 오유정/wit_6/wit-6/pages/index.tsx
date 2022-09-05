@@ -5,8 +5,8 @@ import axios from "axios";
 import {useQuery} from "@tanstack/react-query";
 import style from "styled-components";
 import { productType } from '../types/Product';
-import UseProduct from "./api/Product";
-import Product from '../components/Product.style';
+import UseProduct from "./api/AllProducts";
+import Product from '../components/Product';
 
 const Home= () => {
     const { isLoading,error ,data, isFetching } = UseProduct();

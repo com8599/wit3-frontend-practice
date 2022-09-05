@@ -11,8 +11,8 @@ import { ReactElement } from "react";
 import Usecategory from "../api/UseCategory";
 import { useState } from 'react';
 import { type } from "os";
-import { ProductWrapper,ProductContainer,ProductTitle } from "../../components/Product.style";
-import Product from "../../components/Product.style";
+import { ProductWrapper,ProductContainer,ProductTitle } from "../../components/Product";
+import Product from "../../components/Product";
 import { emit } from "process";
 export default function Category(){
   const router = useRouter(); 

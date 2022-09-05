@@ -7,15 +7,24 @@ import GlobalStyle from '../styles/GlobalStyle';
 import Navbar from "../components/Layout/Navbar"
 import { useState } from 'react';
 function MyApp({ Component, pageProps }: AppProps) {
-  const [queryClient] = React.useState(() => new QueryClient())
+  const queryClient = new QueryClient({
+    defaultOptions : {
+    	queries : {
+          refetchOnWindowFocus : false,
+          // refetchOnMount : false,
+          // retry : false
+        }
+    }
+  });
   return (    
     <QueryClientProvider client={queryClient}>
       <Hydrate state={pageProps.dehydratedState}>
         <GlobalStyle/>
-        <Layout/>
-          <Component {...pageProps} />
+        <Layout>
+        <Component {...pageProps} />
+        </Layout>
       </Hydrate>
-      <ReactQueryDevtools initialIsOpen />
+      {/* <ReactQueryDevtools initialIsOpen /> */}
     </QueryClientProvider>
   )
 }

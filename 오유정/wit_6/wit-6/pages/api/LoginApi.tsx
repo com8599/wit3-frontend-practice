@@ -11,6 +11,7 @@
         password: pw
           })
 })
-    .then(res=>res.json())
+    .then(res=>res.json()),
+    // {refetchOnMount:false,refetchOnWindowFocus:false} 
   )
  }

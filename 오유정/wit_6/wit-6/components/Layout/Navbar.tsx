@@ -10,7 +10,8 @@ export default function Navbar():ReactElement{
   const { isLoading,error ,data, isFetching } = useQuery<string[],Error>(["category"], () =>
     axios
       .get("https://fakestoreapi.com/products/categories")
-      .then((res) => res.data)   
+      .then((res) => res.data),
+      // {refetchOnMount:false,refetchOnWindowFocus:false}  
   );
 
   if (isLoading) return (<p>Loading...</p>);
@@ -19,7 +20,6 @@ export default function Navbar():ReactElement{
 
   return (
     <>
-    <header>
     <Link href="/"><Logo>My Shop</Logo></Link>
       <nav>
         <MenuWrapper>
@@ -28,11 +28,11 @@ export default function Navbar():ReactElement{
           }}>{e}</Menu>)})}
         </MenuWrapper>
       </nav>
-    </header>
     </>
   )
 }
 const Logo = style.p`
+margin-top:0;
 margin-left:60px;
 display:inline-block;
 font-size:40px;
